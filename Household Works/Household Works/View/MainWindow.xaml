@@ -1,0 +1,26 @@
+﻿<Window x:Class="Household_Works.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Household_Works"
+        xmlns:prop="clr-namespace:Household_Works.Properties"
+        xmlns:vm="clr-namespace:Household_Works.ViewModel"
+        xmlns:viewmodel="clr-namespace:Household_Works.ViewModel"  
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    
+    <Window.DataContext>
+        <vm:MainViewModel x:Name="viewModel"/>
+    </Window.DataContext>
+    
+    
+    
+    
+
+    <Grid>
+        
+    </Grid>
+</Window>
