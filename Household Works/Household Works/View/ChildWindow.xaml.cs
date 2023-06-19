@@ -1,5 +1,4 @@
-﻿using Household_Works.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Household_Works
+namespace Household_Works.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy ChildWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChildWindow : UserControl
     {
-        public MainWindow()
+        public ChildWindow()
         {
             InitializeComponent();
-
-            DataContext = new MainViewModel();
         }
     }
 }
