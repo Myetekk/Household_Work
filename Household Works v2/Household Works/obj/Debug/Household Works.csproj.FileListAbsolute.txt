@@ -1,0 +1,16 @@
+C:\Users\mirek\source\repos\Household Works\Household Works\bin\Debug\Household Works.exe.config
+C:\Users\mirek\source\repos\Household Works\Household Works\bin\Debug\Household Works.exe
+C:\Users\mirek\source\repos\Household Works\Household Works\bin\Debug\Household Works.pdb
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works.csproj.AssemblyReference.cache
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\App.g.cs
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works_MarkupCompile.cache
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works_MarkupCompile.lref
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works.g.resources
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household_Works.Properties.Resources.resources
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works.csproj.GenerateResource.cache
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works.csproj.CoreCompileInputs.cache
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works.exe
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\Household Works.pdb
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\View\MainWindow.g.cs
+C:\Users\mirek\source\repos\Household Works\Household Works\obj\Debug\View\MainWindow.baml
