@@ -79,3 +79,24 @@ D:\Github\Household_Work\Household Works\Household Works\obj\Debug\Household Wor
 D:\Github\Household_Work\Household Works\Household Works\obj\Debug\Household Works.csproj.CoreCompileInputs.cache
 D:\Github\Household_Work\Household Works\Household Works\obj\Debug\Household Works.exe
 D:\Github\Household_Work\Household Works\Household Works\obj\Debug\Household Works.pdb
+D:\Github\Household_Work\Household Works v1\Household Works\bin\Debug\Household Works.exe.config
+D:\Github\Household_Work\Household Works v1\Household Works\bin\Debug\Household Works.exe
+D:\Github\Household_Work\Household Works v1\Household Works\bin\Debug\Household Works.pdb
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works.csproj.AssemblyReference.cache
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\View\ChildWindow.g.cs
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\View\MainWindow.g.cs
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\View\ParentWindow.g.cs
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\App.g.cs
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works_MarkupCompile.cache
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works_MarkupCompile.lref
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\App.baml
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\View\ChildWindow.baml
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\View\MainWindow.baml
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\View\ParentWindow.baml
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works.g.resources
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household_Works.Properties.Resources.resources
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works.csproj.GenerateResource.cache
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works.csproj.CoreCompileInputs.cache
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works.exe
+D:\Github\Household_Work\Household Works v1\Household Works\obj\Debug\Household Works.pdb

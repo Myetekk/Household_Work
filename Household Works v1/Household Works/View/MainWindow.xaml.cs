@@ -32,11 +32,13 @@ namespace Household_Works
 
         private void Parent_Click(object sender, RoutedEventArgs e)
         {
-            var newWindow = new ParentWindow();
-            //newWindow.ShowDialog();
+            //var newWindow = new ParentWindow();
+            ////newWindow.ShowDialog();
 
-            newWindow.Content = null;
-            newWindow.Content = new UserControl();
+            //newWindow.Content = null;
+            //newWindow.Content = new UserControl();
+
+            main_window.Visibility = (Visibility)1;
         }
     }
 }
