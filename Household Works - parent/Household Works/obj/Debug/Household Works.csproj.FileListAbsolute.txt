@@ -46,3 +46,23 @@ D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Hous
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.csproj.CoreCompileInputs.cache
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.exe
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.pdb
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\EntityFramework.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\Microsoft.Data.Sqlite.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\SQLitePCLRaw.core.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Buffers.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Data.SQLite.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Memory.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Numerics.Vectors.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\EntityFramework.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\Microsoft.Data.Sqlite.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Buffers.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Data.SQLite.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Memory.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Numerics.Vectors.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.csproj.CopyComplete
