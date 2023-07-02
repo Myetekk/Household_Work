@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Household_Works.Model
 {
@@ -28,7 +29,7 @@ namespace Household_Works.Model
 
 
 
-        // zadania
+        // tasks
         private Combobox_Info.Read_tasks reading_tasks = new Combobox_Info.Read_tasks();
         public string[] read_tasks(long ile)
         {
@@ -48,14 +49,23 @@ namespace Household_Works.Model
 
 
 
-        // hasło
-        //
+        // password
+        private Model.Check_password check_Password = new Model.Check_password();
+        public bool correct_password(string given_password)
+        {
+            if (given_password == check_Password.correct_password())
+            {
+                return true;
+            }
+            MessageBox.Show("Nieprawidłowe hasło");
+            return false;
+        }
 
 
 
 
 
-        // wczytanie zadania
+        // load task
         private Load_task loading_task = new Load_task();
         public string task_number = "odkurzanie";
         public string[] load_task()

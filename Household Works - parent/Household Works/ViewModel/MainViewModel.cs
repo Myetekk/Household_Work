@@ -23,6 +23,21 @@ namespace Household_Works.ViewModel
         private static bool isRun_loged = true;
 
 
+        private string  password_check;
+        public string Password_check
+        {
+            get => password_check;
+
+            set
+            {
+                password_check = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Password_check)));
+            }
+        }
+
+
+
+
 
         private ICommand log_in;
         public ICommand Log_in
@@ -31,11 +46,13 @@ namespace Household_Works.ViewModel
             {
                 return log_in ?? (log_in = new BaseClass.RelayCommand((p) => {
 
-                    load_kids();
-                    load_tasks();
-
-
-                    isRun_loged = false;
+                    if (GetInfo.correct_password(Password_check) == true)
+                    {
+                        load_kids();
+                        load_tasks();
+                        isRun_loged = false;
+                    }
+                        
                 }, p => isRun_loged));
             }
         }
@@ -132,7 +149,6 @@ namespace Household_Works.ViewModel
 
 
         private Items_list selected_task = new Items_list();
-        //public string selected;
         public Items_list Selected_task
         {
             get { return selected_task; }

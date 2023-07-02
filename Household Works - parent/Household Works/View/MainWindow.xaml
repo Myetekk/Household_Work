@@ -9,7 +9,7 @@
         xmlns:viewmodel="clr-namespace:Household_Works.ViewModel" 
         
         mc:Ignorable="d"
-        Title="Parent Window" Height="450" Width="800">
+        Title="Parent Window" Height="450" Width="800" WindowStartupLocation="CenterScreen">
 
     
     <Window.DataContext>
@@ -52,7 +52,23 @@
                             <Border Margin="10,0,10,0" BorderThickness="0">
                                 <TextBox Name="textbox_password" 
                                          Height="25"
-                                />
+                                         Text="{Binding Password_check}"
+                                         FontFamily="pack://application:,,,/Resources/#password">
+                                    <TextBox.InputBindings>
+                                        <!--Disable CTRL+C (COPY) -->
+                                        <KeyBinding Command="ApplicationCommands.NotACommand"
+                                            Key="C"
+                                            Modifiers="Control" />
+                                        <!--Disable CTRL+X (CUT) -->
+                                        <KeyBinding Command="ApplicationCommands.NotACommand"
+                                            Key="X"
+                                            Modifiers="Control" />
+                                    </TextBox.InputBindings>
+                                    <TextBox.ContextMenu>
+                                        <!--Hide context menu where you could copy/cut as well -->
+                                        <ContextMenu Visibility="Collapsed" />
+                                    </TextBox.ContextMenu>
+                                </TextBox>
                             </Border>
                         </Border>
                     </Border>

@@ -41,8 +41,6 @@ D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Hous
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works_MarkupCompile.lref
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\View\MainWindow.baml
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.g.resources
-D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household_Works.Properties.Resources.resources
-D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.csproj.GenerateResource.cache
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.csproj.CoreCompileInputs.cache
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.exe
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.pdb
@@ -66,3 +64,5 @@ D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\Syst
 D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Numerics.Vectors.xml
 D:\Github\Household_Work\Household Works - parent\Household Works\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.csproj.CopyComplete
+D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household_Works.Properties.Resources.resources
+D:\Github\Household_Work\Household Works - parent\Household Works\obj\Debug\Household Works.csproj.GenerateResource.cache
