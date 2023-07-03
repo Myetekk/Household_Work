@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Household_Works.ViewModel
 {
     using Household_Works.Model;
+    using System.Windows;
 
     class MainViewModel: INotifyPropertyChanged
     {
@@ -23,7 +18,75 @@ namespace Household_Works.ViewModel
         public static bool isRun_loged = true;
 
 
-        private string  password_check;
+        
+
+
+        private ICommand log_in;
+        public ICommand Log_in
+        {
+            get
+            {
+                return log_in ?? (log_in = new BaseClass.RelayCommand((p) => {
+
+                    if (GetInfo.Correct_password(Password_check) == true)
+                    {
+                        load_kids();
+                        load_tasks();
+                        Info_new = clear_info_new();
+
+                        isRun_loged = false;
+                    }
+
+                }, p => isRun_loged));
+            }
+        }
+
+
+        
+
+
+        private ICommand commision;
+        public ICommand Commision
+        {
+            get
+            {
+                return commision ?? (commision = new BaseClass.RelayCommand((p) => {
+    
+                    if (GetInfo.Field_contains_text(Info_new) == false)
+                        MessageBox.Show("uzupełnij wszystkie pola");
+                    else
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            XD += Info_new[i];
+                        }
+                    }
+
+                }, p => !isRun_loged));
+            }
+        }
+
+        
+        private string xd;
+        public string XD
+        {
+            get => xd;
+
+            set
+            {
+                xd = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(xd)));
+            }
+        }
+
+
+
+
+
+
+
+
+        private string password_check;
         public string Password_check
         {
             get => password_check;
@@ -34,51 +97,6 @@ namespace Household_Works.ViewModel
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Password_check)));
             }
         }
-
-
-
-
-
-        private ICommand log_in;
-        public ICommand Log_in
-        {
-            get
-            {
-                return log_in ?? (log_in = new BaseClass.RelayCommand((p) => {
-
-                    if (GetInfo.correct_password(Password_check) == true)
-                    {
-                        load_kids();
-                        load_tasks();
-                        isRun_loged = false;
-
-                    }
-                        
-                }, p => isRun_loged));
-            }
-        }
-
-
-
-
-
-        private ICommand load_task;
-        public ICommand Load_task
-        {
-            get
-            {
-                return load_task ?? (load_task = new BaseClass.RelayCommand((p) => {
-                    Info_current = GetInfo.load_task_current();
-                    Info_new = GetInfo.load_task_new();
-
-                }, p => !isRun_loged));
-            }
-        }
-
-
-
-
-
 
 
 
@@ -114,6 +132,16 @@ namespace Household_Works.ViewModel
 
 
 
+        private string[] clear_info_new()
+        {
+            string[] result = { " ", " ", " ", " " };
+            return result;
+        }
+
+
+
+
+
 
 
 
@@ -128,9 +156,9 @@ namespace Household_Works.ViewModel
         }
         private void load_kids()
         {
-            long ile = GetInfo.count_kids();
+            long ile = GetInfo.Count_kids();
             kids_in_combobox = new string[ile];
-            string[] kids = GetInfo.read_kids(ile);
+            string[] kids = GetInfo.Read_kids(ile);
 
             for (int i = 0; i < ile; i++)
             {
@@ -151,6 +179,7 @@ namespace Household_Works.ViewModel
                 if (value != null)
                 {
                     GetInfo.kid_name = value.ToString();
+                    Info_current = GetInfo.Load_task_current();
                 }
             }
         }
@@ -168,9 +197,9 @@ namespace Household_Works.ViewModel
         }
         private void load_tasks()
         {
-            long ile = GetInfo.count_tasks();
+            long ile = GetInfo.Count_tasks();
             tasks_in_combobox = new string[ile];
-            string[] tasks = GetInfo.read_tasks(ile);
+            string[] tasks = GetInfo.Read_tasks(ile);
 
             for (int i = 0; i < ile; i++)
             {
@@ -191,6 +220,7 @@ namespace Household_Works.ViewModel
                 if (value != null)
                 {
                     GetInfo.task_new_number = value.ToString();
+                    Info_new = GetInfo.Load_task_new();
                 }
             }
         }

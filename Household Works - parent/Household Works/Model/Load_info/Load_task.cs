@@ -45,13 +45,27 @@ namespace Household_Works.Model.Load_info
             task_current[0] = kid_number;
 
 
-            string task_number = (string)reader["tasks"];
-            string[] task_temp = task_small_info(task_number);
+            string task_number_whole = (string)reader["tasks"];
+            for (int i = 0; i < task_number_whole.Length / 2; i++)
+            {
+                string task_number = task_number_whole.Substring(2 * i, 1);
+                if (task_number != "0")
+                {
+                    string[] task_temp = task_small_info(task_number);
 
-            task_current[1] = task_temp[0];
-            task_current[2] = task_temp[1];
-            task_current[3] = task_temp[2];
-            task_current[4] = task_temp[3];
+                    task_current[1] += task_temp[0] + "\n";
+                    task_current[2] += task_temp[1] + "\n";
+                    task_current[3] += task_temp[2] + "\n";
+                    task_current[4] += task_temp[3] + "\n";
+                }
+                else
+                {
+                    task_current[1] = "brak zadań";
+                    task_current[2] = "";
+                    task_current[3] = "";
+                    task_current[4] = "";
+                }
+            }
 
 
             conn.Close();
