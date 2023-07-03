@@ -1,0 +1,22 @@
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\bin\Debug\net6.0-windows\Household Works Child.exe
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\bin\Debug\net6.0-windows\Household Works Child.deps.json
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\bin\Debug\net6.0-windows\Household Works Child.runtimeconfig.json
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\bin\Debug\net6.0-windows\Household Works Child.dll
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\bin\Debug\net6.0-windows\Household Works Child.pdb
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.csproj.AssemblyReference.cache
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child_MarkupCompile.cache
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child_MarkupCompile.lref
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.g.resources
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.AssemblyInfoInputs.cache
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.AssemblyInfo.cs
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.csproj.CoreCompileInputs.cache
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.dll
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\refint\Household Works Child.dll
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.pdb
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\Household Works Child.genruntimeconfig.cache
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\ref\Household Works Child.dll
+C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\net6.0-windows\View\MainWindow.g.cs

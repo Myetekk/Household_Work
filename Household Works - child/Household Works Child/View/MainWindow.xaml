@@ -1,0 +1,170 @@
+﻿<Window x:Class="Household_Works_Child.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Household_Works_Child"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <ComboBox Height="50" Width="250"
+                              ItemsSource="{Binding Kids_List}"
+                              SelectedItem="{Binding Selected_Kid}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="#777777" BorderThickness="0.5,0,0.5,0"/>
+                    <Button Content="Zaloguj" FontSize="16"
+                            Height="50" Width="200"
+                            Command="{Binding Btn_LogIn}"/>                             
+                </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <Label Content="Nazwa" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <Label Content="Opis" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <Label Content="Czas" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="3">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <Label Content="Punty" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            </Grid>
+
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <TextBox IsReadOnly="True"
+                         Text=""/>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <TextBox IsReadOnly="True"
+                         Text=""/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <TextBox IsReadOnly="True"
+                         Text=""/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="3">
+                <Border BorderBrush="#777777" BorderThickness="1px"/>
+                <TextBox IsReadOnly="True"
+                         Text=""/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Label Padding="5,20,5,10">
+                    <Label.Content>
+                        <AccessText TextWrapping="WrapWithOverflow" Text="Wybrano zadanie:"
+                                    FontSize="18" />
+                    </Label.Content>
+                </Label>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Border BorderBrush="#777777" BorderThickness="1,0,1,0"/>
+                <Label Content="*Nazwa zadania*" FontSize="20" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Border BorderBrush="#777777" BorderThickness="0,0,1,0"/>
+                <Button Content="Wykonaj" FontSize="16" 
+                        Height="45" Width="140"
+                        Command="{Binding Btn_DoWork}"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Border BorderBrush="#777777" BorderThickness="0,1,0,0"/>
+                <Label FontSize="24" Padding="15,15,15,15">
+                    <Label.Content>
+                        <AccessText TextWrapping="WrapWithOverflow" Text="Łączna suma twoich punktów wynosi:"/>
+                    </Label.Content>
+                </Label>
+            </Grid>
+
+            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="*Łączna ilość punktów*" FontSize="16"></Label>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Label Padding="15,15,15,15" BorderBrush="#777" BorderThickness="0,0,0,1">
+                    <Label.Content>
+                        <AccessText TextWrapping="WrapWithOverflow" 
+                                    Text="Jesteś na drodze do: nagrody/kary" 
+                                    FontSize="20">
+                        </AccessText>
+                    </Label.Content>
+                </Label>
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+        </Grid>
+
+
+    </Grid>
+</Window>
