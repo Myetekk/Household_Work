@@ -29,6 +29,11 @@ namespace Household_Works.Model
 
 
 
+
+
+
+
+
         // tasks
         private Combobox_Info.Read_tasks reading_tasks = new Combobox_Info.Read_tasks();
         public string[] read_tasks(long ile)
@@ -47,6 +52,35 @@ namespace Household_Works.Model
 
 
 
+        // load task new
+        private Load_info.Load_task loading_task_new = new Load_info.Load_task();
+        public string task_new_number = "odkurzanie";
+        public string[] load_task_new()
+        {
+            string[] info_about_task_new = loading_task_new.task_new_info(task_new_number);
+
+            return info_about_task_new;
+        }
+
+
+
+        // load task current
+        private Load_info.Load_task loading_task_current = new Load_info.Load_task();
+        public string kid_name = "Marek";
+        public string[] load_task_current()
+        {
+            string[] info_about_task_current = loading_task_current.task_current_info(kid_name);
+
+            return info_about_task_current;
+        }
+
+
+
+
+
+
+
+
 
 
         // password
@@ -62,18 +96,6 @@ namespace Household_Works.Model
         }
 
 
-
-
-
-        // load task
-        private Load_task loading_task = new Load_task();
-        public string task_number = "odkurzanie";
-        public string[] load_task()
-        {
-            string[] info_about_task = loading_task.task_info(task_number);
-
-            return info_about_task;
-        }
 
     }
 }

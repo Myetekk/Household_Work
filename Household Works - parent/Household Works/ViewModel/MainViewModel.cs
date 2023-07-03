@@ -17,10 +17,10 @@ namespace Household_Works.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         Model.MainModel GetInfo = new Model.MainModel();
-        
-        
-        
-        private static bool isRun_loged = true;
+
+
+
+        public static bool isRun_loged = true;
 
 
         private string  password_check;
@@ -51,6 +51,7 @@ namespace Household_Works.ViewModel
                         load_kids();
                         load_tasks();
                         isRun_loged = false;
+
                     }
                         
                 }, p => isRun_loged));
@@ -67,7 +68,8 @@ namespace Household_Works.ViewModel
             get
             {
                 return load_task ?? (load_task = new BaseClass.RelayCommand((p) => {
-                    Info = GetInfo.load_task();
+                    Info_current = GetInfo.load_task_current();
+                    Info_new = GetInfo.load_task_new();
 
                 }, p => !isRun_loged));
             }
@@ -82,14 +84,29 @@ namespace Household_Works.ViewModel
 
 
 
-        private string[] info;
-        public string[] Info
+        private string[] info_new;
+        public string[] Info_new
         {
-            get { return info; }
+            get { return info_new; }
             private set
             {
-                info = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Info)));
+                info_new = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(info_new)));
+            }
+        }
+
+
+
+
+
+        private string[] info_current;
+        public string[] Info_current
+        {
+            get { return info_current; }
+            private set
+            {
+                info_current = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(info_current)));
             }
         }
 
@@ -119,6 +136,22 @@ namespace Household_Works.ViewModel
             {
                 kids_in_combobox[i] = kids[i];
                 Kids.Add(new Items_list() { Name = kids[i] });
+            }
+        }
+
+
+
+        private Items_list selected_kids = new Items_list();
+        public Items_list Selected_kids
+        {
+            get { return selected_kids; }
+            set
+            {
+                selected_kids = value;
+                if (value != null)
+                {
+                    GetInfo.kid_name = value.ToString();
+                }
             }
         }
 
@@ -157,8 +190,7 @@ namespace Household_Works.ViewModel
                 selected_task = value;
                 if (value != null)
                 {
-                    GetInfo.task_number = value.ToString();
-                    //selected = value.ToString();
+                    GetInfo.task_new_number = value.ToString();
                 }
             }
         }

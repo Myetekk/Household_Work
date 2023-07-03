@@ -32,6 +32,7 @@ namespace Household_Works.Model.Combobox_Info
         {
             string[] kids = new string[ile];
             int i = 0;
+
             conn.Open();
             command = conn.CreateCommand();
             command.CommandText = $"SELECT name FROM kids";

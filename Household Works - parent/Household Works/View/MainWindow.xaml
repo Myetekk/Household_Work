@@ -55,17 +55,14 @@
                                          Text="{Binding Password_check}"
                                          FontFamily="pack://application:,,,/Resources/#password">
                                     <TextBox.InputBindings>
-                                        <!--Disable CTRL+C (COPY) -->
                                         <KeyBinding Command="ApplicationCommands.NotACommand"
                                             Key="C"
                                             Modifiers="Control" />
-                                        <!--Disable CTRL+X (CUT) -->
                                         <KeyBinding Command="ApplicationCommands.NotACommand"
                                             Key="X"
                                             Modifiers="Control" />
                                     </TextBox.InputBindings>
                                     <TextBox.ContextMenu>
-                                        <!--Hide context menu where you could copy/cut as well -->
                                         <ContextMenu Visibility="Collapsed" />
                                     </TextBox.ContextMenu>
                                 </TextBox>
@@ -115,6 +112,7 @@
                             <ComboBox Name="children_list" 
                                       Height="25" 
                                       ItemsSource="{Binding Kids}"
+                                      SelectedItem="{Binding Selected_kids}"
                             />
                         </Border>
                     </Border>
@@ -178,6 +176,7 @@
             <Grid Grid.Row="1" Margin="5,1,5,15">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
@@ -187,89 +186,162 @@
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0">
+                        <Border BorderBrush="#828282" BorderThickness="1,1,1,1">
+                            <TextBox Name="kid_name"
+                                     HorizontalAlignment="Center" 
+                                     VerticalAlignment="Center"
+                                     IsReadOnly="True"
+                                     Text="{Binding Info_current[0]}"
+                            />
+                        </Border>
+                    </Grid>
+                    
+                    <Grid Grid.Row="1">
+                        <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
+                            <Label Content="aktualne" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
+                            <Label Content="nowe" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
 
                     <Grid Grid.Row="0">
                         <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
                             <Label Content="Nazwa" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>                        
+                        </Border>
                     </Grid>
-                    
+
                     <Grid Grid.Row="1">
-                        <Border BorderBrush="#828282" BorderThickness="1,0,1,1" Background="#f7f7f7">
-                            <TextBox Name="name"
-                                     Text="{Binding Info[0]}"
+                        <Border BorderBrush="#828282" BorderThickness="1,1,0,1" Background="#f7f7f7">
+                            <TextBox Name="name_current"
+                                     IsReadOnly="True"
+                                     Text="{Binding Info_current[1]}"
+                            />
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Border BorderBrush="#828282" BorderThickness="1,0,0,1" Background="#f7f7f7">
+                            <TextBox Name="name_new"
+                                     Text="{Binding Info_new[0]}"
                             />
                         </Border>
                     </Grid>
                 </Grid>
                 
 
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
 
                     <Grid Grid.Row="0">
-                        <Border BorderBrush="#828282" BorderThickness="0,1,1,1" Background="#f7f7f7">
+                        <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
                             <Label Content="Opis" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
 
                     <Grid Grid.Row="1">
-                        <Border BorderBrush="#828282" BorderThickness="0,0,1,1" Background="#f7f7f7">
-                            <TextBox Name="description"
-                                     Text="{Binding Info[1]}"
+                        <Border BorderBrush="#828282" BorderThickness="1,1,0,1" Background="#f7f7f7">
+                            <TextBox Name="description_current"
+                                     IsReadOnly="True"
+                                     Text="{Binding Info_current[2]}"
+                            />
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Border BorderBrush="#828282" BorderThickness="1,0,0,1" Background="#f7f7f7">
+                            <TextBox Name="description_new"
+                                     Text="{Binding Info_new[1]}"
                             />
                         </Border>
                     </Grid>
                 </Grid>
 
                 
-                <Grid Grid.Column="2">
+                <Grid Grid.Column="3">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
 
                     <Grid Grid.Row="0">
-                        <Border BorderBrush="#828282" BorderThickness="0,1,1,1" Background="#f7f7f7">
+                        <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
                             <Label Content="Czas" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
 
                     <Grid Grid.Row="1">
-                        <Border BorderBrush="#828282" BorderThickness="0,0,1,1" Background="#f7f7f7">
-                            <TextBox Name="time"
-                                     Text="{Binding Info[2]}"
+                        <Border BorderBrush="#828282" BorderThickness="1,1,0,1" Background="#f7f7f7">
+                            <TextBox Name="time_current"
+                                     IsReadOnly="True"
+                                     Text="{Binding Info_current[3]}"
+                            />
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Border BorderBrush="#828282" BorderThickness="1,0,0,1" Background="#f7f7f7">
+                            <TextBox Name="time_new"
+                                     Text="{Binding Info_new[2]}"
                             />
                         </Border>
                     </Grid>
                 </Grid>
 
 
-                <Grid Grid.Column="3">
+                <Grid Grid.Column="4">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
 
                     <Grid Grid.Row="0">
-                        <Border BorderBrush="#828282" BorderThickness="0,1,1,1" Background="#f7f7f7">
+                        <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
                             <Label Content="Punkty" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </Grid>
 
                     <Grid Grid.Row="1">
-                        <Border BorderBrush="#828282" BorderThickness="0,0,1,1" Background="#f7f7f7">
-                            <TextBox Name="points"
-                                     Text="{Binding Info[3]}"
+                        <Border BorderBrush="#828282" BorderThickness="1,1,0,1" Background="#f7f7f7">
+                            <TextBox Name="points_current"
+                                     IsReadOnly="True"
+                                     Text="{Binding Info_current[4]}"
+                            />
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Border BorderBrush="#828282" BorderThickness="1,0,0,1" Background="#f7f7f7">
+                            <TextBox Name="points_new"
+                                     Text="{Binding Info_new[3]}"
                             />
                         </Border>
                     </Grid>
