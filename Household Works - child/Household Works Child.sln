@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Household Works Child", "Household Works Child\Household Works Child.csproj", "{E1D64744-857C-4AEB-8E50-2F313E410E86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Household Works Child", "Household Works Child\Household Works Child.csproj", "{AE2CDE2F-89A3-49BF-8A96-8E0EBDFF901F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1D64744-857C-4AEB-8E50-2F313E410E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1D64744-857C-4AEB-8E50-2F313E410E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1D64744-857C-4AEB-8E50-2F313E410E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1D64744-857C-4AEB-8E50-2F313E410E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2CDE2F-89A3-49BF-8A96-8E0EBDFF901F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2CDE2F-89A3-49BF-8A96-8E0EBDFF901F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2CDE2F-89A3-49BF-8A96-8E0EBDFF901F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2CDE2F-89A3-49BF-8A96-8E0EBDFF901F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9033ADD2-B466-4B99-A1A4-4EEC0397CD55}
+		SolutionGuid = {98A88293-E19D-499C-9982-D1F1F0458A1B}
 	EndGlobalSection
 EndGlobal

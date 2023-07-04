@@ -13,6 +13,17 @@ namespace Household_Works_Child.ViewModel
     {
         public event PropertyChangedEventHandler Property_Changed;
 
-        
+        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
