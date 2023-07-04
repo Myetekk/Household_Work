@@ -20,7 +20,7 @@ namespace Household_Works.Model
         {
             conn.Open();
             command = conn.CreateCommand();
-            command.CommandText = $"SELECT password FROM admin";
+            command.CommandText = $"SELECT password FROM ADMIN";
             reader = command.ExecuteReader();
             reader.Read();
             string password = DecryptString(key, (string)reader["password"]);

@@ -177,8 +177,8 @@
                 <Grid Grid.Column="8">
                     <Border BorderBrush="#828282" BorderThickness="0,2,1,2" Background="#d9d9d9">
                         <Border Margin="5">
-                            <Button x:Name="button_delete_task"
-                                    Content="Usuń zadanie"
+                            <Button x:Name="button_delete_kid_task"
+                                    Content="Usuń dziecku zadanie"
                                     Margin="2"
                                     Command="{Binding Delete_kid_task}"
                             />
@@ -349,7 +349,7 @@
 
 
                 <Grid Grid.Column="0">
-                    <Border BorderBrush="#828282" BorderThickness="1,2,1,2" Background="#d9d9d9">
+                    <Border BorderBrush="#828282" BorderThickness="1,2,0,2" Background="#d9d9d9">
                         <Border Margin="15,0,0,0">
                             <Label Content="Tworzenie zadania" 
                                    HorizontalAlignment="Left" 
@@ -369,7 +369,7 @@
 
                     <Grid Grid.Column="0">
                         <Border BorderBrush="#828282" BorderThickness="0,2,0,2">
-                            <Border Margin="5">
+                            <Border Margin="5" BorderBrush="#828282" BorderThickness="1,0,1,0">
                                 <Label Content="Gotowe zadania" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </Border>
@@ -527,16 +527,58 @@
                 </Grid>
             </Grid>
 
+            
             <Grid Grid.Row="2" Margin="0,1,0,5">
-                <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
-                    <Border Margin="5">
-                        <Button x:Name="button_send"
-                                Content="Zleć zadanie"
-                                Margin="2"
-                                Command="{Binding Commision}"
-                            />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0">
+                    <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
+                        <Border Margin="5">
+                            <Button x:Name="button_commision"
+                                    Content="Zleć zadanie dziecku"
+                                    Margin="2"
+                                    Command="{Binding Commision}"
+                                />
+                        </Border>
                     </Border>
-                </Border>
+                </Grid>
+
+
+                <Grid Grid.Column="1" Background="#808080">
+                    
+                </Grid>
+
+
+                <Grid Grid.Column="2">
+                    <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
+                        <Border Margin="5">
+                            <Button x:Name="button_save_task"
+                                    Content="Zapisz wzór zadania"
+                                    Margin="2"
+                                    Command="{Binding Save_template}"
+                                />
+                        </Border>
+                    </Border>
+                </Grid>
+
+
+                <Grid Grid.Column="3">
+                    <Border BorderBrush="#828282" BorderThickness="1,1,1,1" Background="#f7f7f7">
+                        <Border Margin="5">
+                            <Button x:Name="button_delete_task"
+                                    Content="Usuń wzór zadania"
+                                    Margin="2"
+                                    Command="{Binding Delete_template}"
+                                />
+                        </Border>
+                    </Border>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>

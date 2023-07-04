@@ -18,6 +18,8 @@ namespace Household_Works.ViewModel
         public static bool isRun_loged = true;
         public static bool isRun_selected_for_delete = false;
         public static bool isRun_selected_kid = false;
+        public static bool isRun_can_save_template = false;
+        public static bool isRun_can_delete_template = false;
 
 
         
@@ -34,7 +36,9 @@ namespace Household_Works.ViewModel
                     {
                         load_kids();
                         Info_new = clear_info_new();
+                        load_tasks();
 
+                        isRun_can_save_template = true;
                         isRun_loged = false;
                     }
 
@@ -62,6 +66,11 @@ namespace Household_Works.ViewModel
                         Current_kid_tasks.Clear();
                         Info_current = GetInfo.Load_task_current();
                         load_current_kid_tasks();
+
+                        Tasks.Clear();
+                        Info_new = clear_info_new();
+                        load_tasks();
+
                     }
 
                 }, p => isRun_selected_kid));
@@ -90,6 +99,62 @@ namespace Household_Works.ViewModel
                 }, p => isRun_selected_for_delete));
             }
         }
+
+
+
+
+        
+        private ICommand save_template;
+        public ICommand Save_template
+        {
+            get
+            {
+                return save_template ?? (save_template = new BaseClass.RelayCommand((p) => {
+
+                    if (GetInfo.Field_contains_text(Info_new) == false)
+                        MessageBox.Show("uzupełnij wszystkie pola");
+                    else
+                    {
+                        GetInfo.Save_template(Info_new);
+
+                        Tasks.Clear();
+                        Info_new = clear_info_new();
+                        load_tasks();
+                    }
+                    
+
+                }, p => isRun_can_save_template));
+            }
+        }
+        
+
+
+
+
+        
+        private ICommand delete_template;
+        public ICommand Delete_template
+        {
+            get
+            {
+                return delete_template ?? (delete_template = new BaseClass.RelayCommand((p) => {
+
+                    GetInfo.Delete_template(Info_new);
+
+                    Tasks.Clear();
+                    Info_new = clear_info_new();
+                    load_tasks();
+
+                }, p => isRun_can_delete_template));
+            }
+        }
+
+
+
+
+
+
+
 
 
 
@@ -147,8 +212,16 @@ namespace Household_Works.ViewModel
         private string[] clear_info_new()
         {
             string[] result = { "", "", "", "" };
+
+            isRun_can_delete_template = false;
+
             return result;
         }
+
+
+
+
+
 
 
 
@@ -181,6 +254,8 @@ namespace Household_Works.ViewModel
 
 
 
+
+
         private Items_list selected_kids = new Items_list();
         public Items_list Selected_kids
         {
@@ -210,6 +285,11 @@ namespace Household_Works.ViewModel
 
 
 
+
+
+
+
+
         public string[] tasks_in_combobox;
         private ObservableCollection<Items_list> tasks = new ObservableCollection<Items_list>();
         public ObservableCollection<Items_list> Tasks
@@ -232,6 +312,8 @@ namespace Household_Works.ViewModel
 
 
 
+
+
         private Items_list selected_task = new Items_list();
         public Items_list Selected_task
         {
@@ -243,9 +325,14 @@ namespace Household_Works.ViewModel
                 {
                     GetInfo.task_new_number = value.ToString();
                     Info_new = GetInfo.Load_task_new();
+                    isRun_can_delete_template = true;
                 }
             }
         }
+
+
+
+
 
 
 
@@ -274,6 +361,8 @@ namespace Household_Works.ViewModel
                 }
             }
         }
+
+
 
 
 

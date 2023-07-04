@@ -127,15 +127,9 @@ namespace Household_Works.Model.Combobox_Info
 
         public void Insert_task_for_kid(string[] task_info, string kid_name)
         {
-            string name = task_info[0];
-            string discription = task_info[1];
-            string time = task_info[2];
-            string points = task_info[3];
-
-
             conn.Open();
             command = conn.CreateCommand();
-            command.CommandText = $" INSERT INTO {kid_name} (name, discription, time, points) VALUES ('{name}', '{discription}', '{time}', '{points}'); ";
+            command.CommandText = $" INSERT INTO {kid_name} (name, discription, time, points) VALUES ('{task_info[0]}', '{task_info[1]}', '{task_info[2]}', '{task_info[3]}'); ";
             command.ExecuteNonQuery();
 
             conn.Close();

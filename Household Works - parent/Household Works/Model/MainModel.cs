@@ -55,6 +55,11 @@ namespace Household_Works.Model
 
 
 
+
+
+
+
+
         // delete task for current kid
         public void Delete_kid_task()
         {
@@ -70,6 +75,12 @@ namespace Household_Works.Model
         {
             reading_kid_tasks.Insert_task_for_kid(task_info, kid_name);
         }
+
+
+
+
+
+
 
 
 
@@ -122,6 +133,29 @@ namespace Household_Works.Model
 
             return info_about_task_current;
         }
+
+
+
+
+        private Load_info.Templates_edit template_edit = new Load_info.Templates_edit();
+        public void Save_template(string[] info)
+        {
+            template_edit.Save_template(info);
+        }
+
+
+
+
+
+        public void Delete_template(string[] info)
+        {
+            template_edit.Delete_template(info);
+        }
+
+
+
+
+
 
 
 

@@ -96,6 +96,7 @@
     <Compile Include="Model\Check_password.cs" />
     <Compile Include="Model\Combobox_Info\Read_tasks.cs" />
     <Compile Include="Model\Load_info\Load_task.cs" />
+    <Compile Include="Model\Load_info\Templates_edit.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="Model\Items_list.cs" />
     <Compile Include="Model\Combobox_Info\Read_kids.cs" />

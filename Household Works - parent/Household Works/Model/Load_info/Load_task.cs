@@ -22,35 +22,9 @@ namespace Household_Works.Model.Load_info
             command = conn.CreateCommand();
             command.CommandText = $"SELECT * FROM '{kid_number}' ";
             reader = command.ExecuteReader();
-            //reader.Read();
-            //string task_number_whole = (string)reader["tasks"];
-            //conn.Close();
 
             task_current[0] = kid_number;
             task_current[5] = "Zadania dla: " + kid_number;
-
-
-            //for (int i = 0; i < task_number_whole.Length / 2; i++)
-            //{
-            //    string task_number = task_number_whole.Substring(2 * i, 1);
-            //    if (task_number != "0")
-            //    {
-            //        string[] task_temp = task_small_info(task_number);
-
-            //        task_current[1] += task_temp[0] + "\n";
-            //        task_current[2] += task_temp[1] + "\n";
-            //        task_current[3] += task_temp[2] + "\n";
-            //        task_current[4] += task_temp[3] + "\n";
-            //    }
-            //    else
-            //    {
-            //        task_current[1] = "brak zadań";
-            //        task_current[2] = "";
-            //        task_current[3] = "";
-            //        task_current[4] = "";
-            //    }
-            //}
-
 
             int i = 0;
             while (reader.Read())
@@ -68,24 +42,8 @@ namespace Household_Works.Model.Load_info
             return task_current;
         }
 
-        //private string[] task_small_info(string task_number)
-        //{
-        //    string[] small_info = new string[4];
 
-        //    conn.Open();
-        //    command = conn.CreateCommand();
-        //    command.CommandText = $"SELECT * FROM tasks where id is '{task_number}'";
-        //    reader = command.ExecuteReader();
-        //    reader.Read();
 
-        //    small_info[0] = (string)reader["name"];
-        //    small_info[1] = (string)reader["discription"];
-        //    small_info[2] = (string)reader["time"];
-        //    small_info[3] = reader["points"].ToString();
-        //    conn.Close();
-
-        //    return small_info;
-        //}
 
 
         public string[] task_new_info(string task_number)
