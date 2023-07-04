@@ -16,6 +16,8 @@ namespace Household_Works.ViewModel
 
 
         public static bool isRun_loged = true;
+        public static bool isRun_selected_for_delete = false;
+        public static bool isRun_selected_kid = false;
 
 
         
@@ -31,7 +33,6 @@ namespace Household_Works.ViewModel
                     if (GetInfo.Correct_password(Password_check) == true)
                     {
                         load_kids();
-                        load_tasks();
                         Info_new = clear_info_new();
 
                         isRun_loged = false;
@@ -56,26 +57,37 @@ namespace Household_Works.ViewModel
                         MessageBox.Show("uzupełnij wszystkie pola");
                     else
                     {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            XD += Info_new[i];
-                        }
+                        GetInfo.Insert_kid_task(Info_new);
+
+                        Current_kid_tasks.Clear();
+                        Info_current = GetInfo.Load_task_current();
+                        load_current_kid_tasks();
                     }
 
-                }, p => !isRun_loged));
+                }, p => isRun_selected_kid));
             }
         }
 
-        
-        private string xd;
-        public string XD
-        {
-            get => xd;
 
-            set
+
+
+
+        private ICommand delete_kid_task;
+        public ICommand Delete_kid_task
+        {
+            get
             {
-                xd = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(xd)));
+                return delete_kid_task ?? (delete_kid_task = new BaseClass.RelayCommand((p) => {
+
+                    GetInfo.Delete_kid_task();
+
+                    Current_kid_tasks.Clear();
+                    Info_current = GetInfo.Load_task_current();
+                    load_current_kid_tasks();
+
+                    isRun_selected_for_delete = false;
+
+                }, p => isRun_selected_for_delete));
             }
         }
 
@@ -134,7 +146,7 @@ namespace Household_Works.ViewModel
 
         private string[] clear_info_new()
         {
-            string[] result = { " ", " ", " ", " " };
+            string[] result = { "", "", "", "" };
             return result;
         }
 
@@ -179,7 +191,17 @@ namespace Household_Works.ViewModel
                 if (value != null)
                 {
                     GetInfo.kid_name = value.ToString();
+
+                    Current_kid_tasks.Clear();
                     Info_current = GetInfo.Load_task_current();
+                    load_current_kid_tasks();
+
+                    Tasks.Clear();
+                    load_tasks();
+
+                    Info_new = clear_info_new();
+
+                    isRun_selected_kid = true;
                 }
             }
         }
@@ -225,6 +247,50 @@ namespace Household_Works.ViewModel
             }
         }
 
+
+
+
+
+
+        public string[] kid_tasks_in_combobox;
+        private ObservableCollection<Items_list> current_kid_tasks = new ObservableCollection<Items_list>();
+        public ObservableCollection<Items_list> Current_kid_tasks
+        {
+            get { return current_kid_tasks; }
+            set { current_kid_tasks = value; }
+        }
+        private void load_current_kid_tasks()
+        {
+            long ile = GetInfo.Count_kid_tasks(Info_current[0]);
+            kid_tasks_in_combobox = new string[ile];
+            string[] current_kid_tasks = GetInfo.Read_kid_tasks(Info_current[0], ile);
+
+            if (current_kid_tasks.Length > 0)
+            {
+                for (int i = 0; i < ile; i++)
+                {
+                    kid_tasks_in_combobox[i] = current_kid_tasks[i];
+                    Current_kid_tasks.Add(new Items_list() { Name = current_kid_tasks[i] });
+                }
+            }
+        }
+
+
+
+        private Items_list selected_current_kid_tasks = new Items_list();
+        public Items_list Selected_current_kid_tasks
+        {
+            get { return selected_current_kid_tasks; }
+            set
+            {
+                selected_current_kid_tasks = value;
+                if (value != null)
+                {
+                    GetInfo.kid_task_name = value.ToString();
+                    isRun_selected_for_delete = true;
+                }
+            }
+        }
 
 
 

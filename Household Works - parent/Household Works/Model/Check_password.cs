@@ -24,6 +24,8 @@ namespace Household_Works.Model
             reader = command.ExecuteReader();
             reader.Read();
             string password = DecryptString(key, (string)reader["password"]);
+
+            reader.Close();
             conn.Close();
 
             return password;

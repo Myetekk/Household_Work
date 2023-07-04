@@ -23,6 +23,8 @@ namespace Household_Works.Model.Combobox_Info
             reader = command.ExecuteReader();
             reader.Read();
             ile = (long)reader["ile"];
+
+            reader.Close();
             conn.Close();
 
             return ile;
@@ -32,6 +34,7 @@ namespace Household_Works.Model.Combobox_Info
         {
             string[] tasks = new string[ile];
             int i = 0;
+
             conn.Open();
             command = conn.CreateCommand();
             command.CommandText = $"SELECT name FROM tasks";
@@ -42,6 +45,8 @@ namespace Household_Works.Model.Combobox_Info
                 tasks[i] = (string)reader["name"];
                 i++;
             }
+
+            reader.Close();
             conn.Close();
 
             return tasks;

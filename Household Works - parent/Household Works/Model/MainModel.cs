@@ -29,6 +29,51 @@ namespace Household_Works.Model
 
 
 
+        // tasks for current kid
+        private Combobox_Info.Read_kids reading_kid_tasks = new Combobox_Info.Read_kids();
+        public string kid_task_name = "";
+        public string[] Read_kid_tasks(string kid_name, long ile)
+        {
+            string[] kid_task_names = new string[ile];
+            kid_task_names = reading_kid_tasks.kid_tasks_to_combobox(kid_name, ile);
+
+            return kid_task_names;
+        }
+        public long Count_kid_tasks(string kid_name)
+        {
+            long ile = reading_kid_tasks.count_kid_tasks(kid_name);
+
+            return ile;
+        }
+
+
+
+
+
+
+
+
+
+
+        // delete task for current kid
+        public void Delete_kid_task()
+        {
+            reading_kid_tasks.Delete_task_from_kid(kid_task_name, kid_name);
+        }
+
+
+
+
+
+        // insert task for current kid
+        public void Insert_kid_task(string[] task_info)
+        {
+            reading_kid_tasks.Insert_task_for_kid(task_info, kid_name);
+        }
+
+
+
+
 
 
 
@@ -52,6 +97,8 @@ namespace Household_Works.Model
 
 
 
+
+
         // load task new
         private Load_info.Load_task loading_task_new = new Load_info.Load_task();
         public string task_new_number = "odkurzanie";
@@ -61,6 +108,8 @@ namespace Household_Works.Model
 
             return info_about_task_new;
         }
+
+
 
 
 
@@ -83,7 +132,7 @@ namespace Household_Works.Model
 
 
 
-        // password
+        // check if password is correct
         private Model.Check_password check_Password = new Model.Check_password();
         public bool Correct_password(string given_password)
         {
@@ -99,11 +148,7 @@ namespace Household_Works.Model
 
 
 
-
-
-
-
-
+        // check if text is not white space or null
         public bool Field_contains_text(string[] text)
         {
             for (int i = 0; i < 4; i++)
@@ -121,16 +166,7 @@ namespace Household_Works.Model
 
 
 
-
-
-
-
-
-        public string[] Clear_info_new()
-        {
-            string[] result = { "", "", "", ""};
-            return result;
-        }
+        
 
     }
 }
