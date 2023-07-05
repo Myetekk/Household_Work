@@ -9,19 +9,19 @@ namespace Household_Works_Child.Model
 {
     public class ItemsList
     {
-        private string name;
-        public string Name
+        private string kid_name;
+        public string Kid_Name
         {
-            get => name;
+            get => kid_name;
             set
             {
-                name = value;
+                kid_name = value;
             }
         }
 
         public override string ToString()
         {
-            return String.Format(Name); 
+            return String.Format(Kid_Name); 
         }
 
         public virtual event PropertyChangedEventHandler PropertyChanged;

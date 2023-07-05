@@ -9,8 +9,6 @@ namespace Household_Works_Child.Model
     internal class MainModel
     {
 
-        private string[] kids_list;
-        public string[] Kids_list;
 
         //LoadKids kid_loader = new LoadKids();
         //public long Count_Kids()

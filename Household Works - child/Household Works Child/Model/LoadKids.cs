@@ -14,7 +14,7 @@ namespace Household_Works_Child.Model
         SQLiteCommand command;
 
         public long count_kids()
-        {//to chb źle napisane counter bd = 0
+        {
             long counter = 0;
             conn.Open();
 
@@ -45,7 +45,6 @@ namespace Household_Works_Child.Model
             int i = 0;
             while (reader.Read())
             {
-                //long id = (long)reader["id"];
                 kids_list[i++] = (string)reader["name"];
             }
 

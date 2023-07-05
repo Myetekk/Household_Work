@@ -82,8 +82,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\FullTask.cs" />
     <Compile Include="Model\ItemsList.cs" />
     <Compile Include="Model\LoadKids.cs" />
+    <Compile Include="Model\LoadTasks.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="ViewModel\BaseClass\RelayCommand.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

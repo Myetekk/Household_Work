@@ -17,6 +17,9 @@ namespace Household_Works_Child.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private bool Btn_LogIn_Clicked = false;
+
+
         
         LoadKids kid_loader = new LoadKids();
         //Model.MainModel model = new Model.MainModel();
@@ -30,7 +33,7 @@ namespace Household_Works_Child.ViewModel
 
             foreach (var kid in kids_list_string)
             {
-                kids_list.Add(new ItemsList() { Name = kid} );
+                kids_list.Add(new ItemsList() {Kid_Name = kid} );
             }
 
             return kids_list;
@@ -57,6 +60,99 @@ namespace Household_Works_Child.ViewModel
             }
         }
 
+        private ObservableCollection<FullTask> task_list = new ObservableCollection<FullTask>();
+        public ObservableCollection<FullTask> Task_List
+        {
+            get => task_list;
+            set
+            {
+                task_list = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Task_List"));
+            }
+        }
+
+        private FullTask selected_task;
+        public FullTask Selected_Task
+        {
+            get => selected_task;
+            set
+            {
+                selected_task = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(selected_task)));
+                    Selected_Task_Name = selected_task.Task_Name;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(selected_task_name)));
+                }
+            }
+        }
+
+        private string selected_task_name;
+        public string Selected_Task_Name
+        {
+            get => selected_task_name;
+            set => selected_task_name = value;
+        }
+
+
+        LoadTasks task_loader = new LoadTasks();
+        private ObservableCollection<FullTask> Load_Tasks(string kid_name)
+        {
+            //załadować load_tasks tak żeby dało się odpalić w MainVM
+            ObservableCollection<FullTask> loaded_task_list = new ObservableCollection<FullTask>();
+            loaded_task_list = task_loader.load_tasks(kid_name);
+
+            return loaded_task_list;
+        }
+
+
+
+
+        //private string task_name;
+        //public string Task_Name
+        //{
+        //    get => task_name;
+        //    set
+        //    {
+        //        task_name = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(task_name)));
+        //    }
+        //}
+
+        //private string task_desc;
+        //public string Task_Desc
+        //{
+        //    get => task_desc;
+        //    set
+        //    {
+        //        task_desc = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(task_desc)));
+        //    }
+        //}
+
+        //private string task_time;
+        //public string Task_Time
+        //{
+        //    get => task_time;
+        //    set
+        //    {
+        //        task_time = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(task_time)));
+        //    }
+        //}
+
+        //private string task_points;
+        //public string Task_Points
+        //{
+        //    get => task_points;
+        //    set
+        //    {
+        //        task_points = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(task_points)));
+        //    }
+        //}
+
+
 
         private ICommand btn_login;
         public ICommand Btn_LogIn
@@ -70,16 +166,30 @@ namespace Household_Works_Child.ViewModel
 
                     if (logging_kid == kid.ToString())
                     {
-                        logging_kid += "jest dzieć";
+                        Btn_LogIn_Clicked = true;
+                        Task_List = Load_Tasks(logging_kid);
 
+                        
+                        break;
                     }
                 }
-                Console.WriteLine("nie ma dziecia");
 
             }//canExecute -> zawsze true
-            , p => true
+            , p => !Btn_LogIn_Clicked
 
             ));
         }
+
+
+        //private ICommand btn_dowork;
+        //public ICommand Btn_DoWork
+        //{
+        //    get => btn_dowork ?? (btn_dowork = new RelayCommand((p) =>
+        //    {
+
+        //    }
+        //    , 
+        //        )
+        //}
     }
 }

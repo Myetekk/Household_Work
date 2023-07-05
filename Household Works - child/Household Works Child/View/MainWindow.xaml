@@ -7,6 +7,12 @@
         xmlns:vm="clr-namespace:Household_Works_Child.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE2DCD6" Offset="1"/>
+            <GradientStop Color="#FFF7F4F0" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
 
     <Window.DataContext>
         <vm:MainViewModel x:Name="ViewModel"/>
@@ -42,7 +48,34 @@
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="0">
-            <Grid.RowDefinitions>
+
+            <ListView Margin="10" 
+                      ItemsSource="{Binding Task_List}"
+                      SelectedItem="{Binding Selected_Task}" BorderBrush="#FF5B5E65">
+                <ListView.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Gainsboro" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.375"/>
+                    </LinearGradientBrush>
+                </ListView.Background>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Nazwa" Width="110" 
+                                        DisplayMemberBinding="{Binding Task_Name}"/>
+                        <GridViewColumn Header="Opis" Width="260"
+                                        DisplayMemberBinding="{Binding Task_Desc}"/>
+                        <GridViewColumn Header="Czas" Width="90"
+                                        DisplayMemberBinding="{Binding Task_Time}"/>
+                        <GridViewColumn Header="Punkty" Width="90"
+                                        DisplayMemberBinding="{Binding Task_Points}"/>
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+
+            <!--<Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
@@ -94,7 +127,7 @@
                 <Border BorderBrush="#777777" BorderThickness="1px"/>
                 <TextBox IsReadOnly="True"
                          Text="{Binding Task_Points}"/>
-            </Grid>
+            </Grid>-->
 
         </Grid>
 
@@ -116,7 +149,7 @@
 
             <Grid Grid.Column="1">
                 <Border BorderBrush="#777777" BorderThickness="1,0,1,0"/>
-                <Label Content="{Binding Selected_Task}" FontSize="20" 
+                <Label Content="{Binding Selected_Task_Name}" FontSize="20" 
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
 
