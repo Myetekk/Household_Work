@@ -17,12 +17,16 @@ namespace Household_Works.ViewModel
 
         public static bool isRun_loged = true;
         public static bool isRun_selected_for_delete = false;
-        public static bool isRun_selected_kid = false;
+
+        public static bool isRun_selected_kid1 = false;
+        public static bool isRun_selected_kid2 = false;
+
         public static bool isRun_can_save_template = false;
         public static bool isRun_can_delete_template = false;
 
+        public static bool isRun_can_save_kid = false;
 
-        
+
 
 
         private ICommand log_in;
@@ -40,6 +44,7 @@ namespace Household_Works.ViewModel
 
                         isRun_can_save_template = true;
                         isRun_loged = false;
+                        isRun_can_save_kid = true;
                     }
 
                 }, p => isRun_loged));
@@ -57,7 +62,7 @@ namespace Household_Works.ViewModel
             {
                 return commision ?? (commision = new BaseClass.RelayCommand((p) => {
     
-                    if (GetInfo.Field_contains_text(Info_new) == false)
+                    if (GetInfo.Field_contains_text_table(Info_new) == false)
                         MessageBox.Show("uzupełnij wszystkie pola");
                     else
                     {
@@ -70,10 +75,9 @@ namespace Household_Works.ViewModel
                         Tasks.Clear();
                         Info_new = clear_info_new();
                         load_tasks();
-
                     }
 
-                }, p => isRun_selected_kid));
+                }, p => isRun_selected_kid1));
             }
         }
 
@@ -111,7 +115,7 @@ namespace Household_Works.ViewModel
             {
                 return save_template ?? (save_template = new BaseClass.RelayCommand((p) => {
 
-                    if (GetInfo.Field_contains_text(Info_new) == false)
+                    if (GetInfo.Field_contains_text_table(Info_new) == false)
                         MessageBox.Show("uzupełnij wszystkie pola");
                     else
                     {
@@ -153,6 +157,68 @@ namespace Household_Works.ViewModel
 
 
 
+        private ICommand delete_kid;
+        public ICommand Delete_kid
+        {
+            get
+            {
+                return delete_kid ?? (delete_kid = new BaseClass.RelayCommand((p) => {
+
+                    GetInfo.Delete_kid();
+
+                    Kids.Clear();
+                    load_kids();
+
+                    Tasks.Clear();
+                    load_tasks();
+
+                    Info_new = clear_info_new();
+
+                    isRun_selected_kid2 = false;
+                }, p => isRun_selected_kid2));
+            }
+        }
+
+
+
+
+
+        private ICommand add_kid;
+        public ICommand Add_kid
+        {
+            get
+            {
+                return add_kid ?? (add_kid = new BaseClass.RelayCommand((p) => {
+
+                    if (GetInfo.Field_contains_text(Kid_name) == true)
+                    {
+                        GetInfo.Add_kid();
+
+                        Kids.Clear();
+                        load_kids();
+
+                        Tasks.Clear();
+                        load_tasks();
+
+                        Info_new = clear_info_new();
+
+                        Kid_name = "";
+
+                        isRun_can_save_kid = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Podaj imię dziecka");
+                    }
+
+                }, p => isRun_can_save_kid));
+            }
+        }
+
+
+
+
+
 
 
 
@@ -172,6 +238,23 @@ namespace Household_Works.ViewModel
             {
                 password_check = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Password_check)));
+            }
+        }
+
+
+
+
+
+        private string kid_name;
+        public string Kid_name
+        {
+            get => kid_name;
+
+            set
+            {
+                kid_name = value;
+                GetInfo.kid_name_for_add = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Kid_name)));
             }
         }
 
@@ -256,13 +339,13 @@ namespace Household_Works.ViewModel
 
 
 
-        private Items_list selected_kids = new Items_list();
-        public Items_list Selected_kids
+        private Items_list selected_kids1 = new Items_list();
+        public Items_list Selected_kids1
         {
-            get { return selected_kids; }
+            get { return selected_kids1; }
             set
             {
-                selected_kids = value;
+                selected_kids1 = value;
                 if (value != null)
                 {
                     GetInfo.kid_name = value.ToString();
@@ -276,7 +359,27 @@ namespace Household_Works.ViewModel
 
                     Info_new = clear_info_new();
 
-                    isRun_selected_kid = true;
+                    isRun_selected_kid1 = true;
+                }
+            }
+        }
+
+
+
+
+
+        private Items_list selected_kids2 = new Items_list();
+        public Items_list Selected_kids2
+        {
+            get { return selected_kids2; }
+            set
+            {
+                selected_kids2 = value;
+                if (value != null)
+                {
+                    GetInfo.kid_name_for_delete = value.ToString();
+
+                    isRun_selected_kid2 = true;
                 }
             }
         }

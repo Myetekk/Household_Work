@@ -9,7 +9,7 @@
         xmlns:viewmodel="clr-namespace:Household_Works.ViewModel" 
         
         mc:Ignorable="d"
-        Title="Parent Window" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="Parent Window" Height="800" Width="1100" WindowStartupLocation="CenterScreen">
 
     
     <Window.DataContext>
@@ -22,88 +22,239 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="8"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="8"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.4*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2.2*"/>
         </Grid.RowDefinitions>
 
 
-        <Grid Grid.Row="0" Margin="5,10,15,10">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
+                <!--<ColumnDefinition Width="1*"/>-->
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="Logowanie" 
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                />
+            </Grid>
+
+
+            <Grid Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Zarządzanie dziećmi" 
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                />
+            </Grid>
+
+
+            <!--<Grid Grid.Column="2">
+                <Label Content="Zarządzanie nagrodami" 
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                />
+            </Grid>-->
+        </Grid>
+
+
+        <Grid Grid.Row="1" Margin="10,10,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="10"/>
+                
                 <ColumnDefinition Width="2*"/>
+                
+                <!--<ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="10"/>
+                
+                <ColumnDefinition Width="1*"/>-->
             </Grid.ColumnDefinitions>
 
 
             <Grid Grid.Column="0">
-                <Border BorderBrush="#828282" BorderThickness="1,2,0,2" Background="#d9d9d9">
-                    <Border Margin="5">
-                        <Label Content="Podaj hasło" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </Border>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
 
-            </Grid>
 
-            <Grid Grid.Column="1">
-                <Border BorderBrush="#828282" BorderThickness="0,2,0,2" Background="#d9d9d9">
-                    <Border Margin="5">
-                        <Border BorderBrush="#828282" BorderThickness="1,0,1,0">
-                            <Border Margin="10,0,10,0" BorderThickness="0">
-                                <TextBox Name="textbox_password" 
-                                         Height="40"
-                                         VerticalContentAlignment="Center"
-                                         FontSize="15"
-                                         Text="{Binding Password_check}"
-                                        FontFamily="pack://application:,,,/Resources/#password">
-                                    <TextBox.InputBindings>
-                                        <KeyBinding Command="ApplicationCommands.NotACommand"
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid Grid.Column="0">
+                        <Border BorderBrush="#828282" BorderThickness="1,2,0,0" Background="#d9d9d9">
+                            <Label Content="Podaj hasło" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+
+
+                    <Grid Grid.Column="1">
+                        <Border BorderBrush="#828282" BorderThickness="1,2,1,0" Background="#d9d9d9">
+                            <TextBox Name="textbox_password" 
+                                     Height="30"
+                                     Margin="5"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="15"
+                                     Text="{Binding Password_check}"
+                                     FontFamily="pack://application:,,,/Resources/#password">
+                                <TextBox.InputBindings>
+                                    <KeyBinding Command="ApplicationCommands.NotACommand"
                                             Key="C"
                                             Modifiers="Control" />
-                                        <KeyBinding Command="ApplicationCommands.NotACommand"
+                                    <KeyBinding Command="ApplicationCommands.NotACommand"
                                             Key="X"
                                             Modifiers="Control" />
-                                    </TextBox.InputBindings>
-                                    <TextBox.ContextMenu>
-                                        <ContextMenu Visibility="Collapsed" />
-                                    </TextBox.ContextMenu>
-                                </TextBox>
-                            </Border>
+                                </TextBox.InputBindings>
+                                <TextBox.ContextMenu>
+                                    <ContextMenu Visibility="Collapsed" />
+                                </TextBox.ContextMenu>
+                            </TextBox>
                         </Border>
-                    </Border>
-                </Border>
-            </Grid>
+                    </Grid>
+                </Grid>
 
-            <Grid Grid.Column="2">
-                <Border BorderBrush="#828282" BorderThickness="0,2,1,2" Background="#d9d9d9">
-                    <Border Margin="5">
-                        <Button x:Name="button_log_in"
+
+                <Grid Grid.Row="1">
+                    <Border BorderBrush="#828282" BorderThickness="1,1,1,2" Background="#d9d9d9">
+                        <Border Margin="5">
+                            <Button x:Name="button_log_in"
                                 Content="Zaloguj"
                                 Margin="2"
                                 Command="{Binding Log_in}"
                         />
+                        </Border>
                     </Border>
-                </Border>
+                </Grid>
             </Grid>
+
+
+            <Grid Grid.Column="2" Background="#808080">
+
+            </Grid>
+
+
+            <Grid Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid Grid.Column="0">
+                        <Border BorderBrush="#828282" BorderThickness="1,0,1,2" Background="#d9d9d9">
+                            <TextBox Name="textbox_kid_name" 
+                                     Height="30"
+                                     Margin="5"
+                                     VerticalContentAlignment="Center"
+                                     FontSize="15"
+                                     Text="{Binding Kid_name}"
+                            />
+                        </Border>
+                    </Grid>
+
+
+                    <Grid Grid.Column="1">
+                        <Border BorderBrush="#828282" BorderThickness="0,0,1,2" Background="#d9d9d9">
+                            <Button x:Name="button_add_kid"
+                                    Content="Dodaj dziecko"
+                                    Margin="5"
+                                    Command="{Binding Add_kid}"
+                            />
+                        </Border>
+                    </Grid>
+                </Grid>
+
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid Grid.Column="0">
+                        <Border BorderBrush="#828282" BorderThickness="1,2,1,2" Background="#d9d9d9">
+                            <ComboBox Name="children_list2" 
+                                      Height="25" 
+                                      Margin="5"
+                                      ItemsSource="{Binding Kids}"
+                                      SelectedItem="{Binding Selected_kids2}"
+                            />
+                        </Border>
+                    </Grid>
+
+
+                    <Grid Grid.Column="1">
+                        <Border BorderBrush="#828282" BorderThickness="0,2,1,2" Background="#d9d9d9">
+                            <Button x:Name="button_delete_kid"
+                                    Content="Usuń dziecko"
+                                    Margin="5"
+                                    Command="{Binding Delete_kid}"
+                            />
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+            <!--<Grid Grid.Column="6" Background="#808080">
+
+            </Grid>
+            
+
+            <Grid Grid.Column="8">
+                
+            </Grid>-->
         </Grid>
 
 
-        <Grid Grid.Row="1" Background="#808080">
+        <Grid Grid.Row="2" Background="#808080">
                 
         </Grid>
 
 
-        <Grid Grid.Row="2" Margin="10,10,15,10">
+        <Grid Grid.Row="3" Margin="10,0,0,0">
+            <Label Content="Zarządzanie zadaniami wybranego dziecka" 
+                   VerticalAlignment="Center"
+                   FontSize="25"
+            />
+        </Grid>
+
+
+        <Grid Grid.Row="4" Margin="10,0,10,10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="10"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0" Margin="0,10,0,1">
+            <Grid Grid.Row="0" Margin="0,0,0,1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
@@ -129,10 +280,10 @@
                     <Border BorderBrush="#828282" BorderThickness="0,2,0,2" Background="#d9d9d9">
                         <Border BorderBrush="#828282" BorderThickness="1,0,0,0" Margin="5">
                             <Border Margin="10,0,10,0">
-                                <ComboBox Name="children_list" 
+                                <ComboBox Name="children_list1" 
                                           Height="25" 
                                           ItemsSource="{Binding Kids}"
-                                          SelectedItem="{Binding Selected_kids}"
+                                          SelectedItem="{Binding Selected_kids1}"
                                 />
                             </Border>
                         </Border>
@@ -328,12 +479,36 @@
         </Grid>
 
 
-        <Grid Grid.Row="3" Background="#808080">
-            
+        <Grid Grid.Row="5" Background="#808080">
+
         </Grid>
 
 
-        <Grid Grid.Row="4" Margin="10,10,15,10">
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0" Margin="10,0,0,0">
+                <Label Content="Zadawanie zadań dziecku" 
+                   VerticalAlignment="Center"
+                   FontSize="25"
+                />
+            </Grid>
+
+
+            <Grid Grid.Column="1">
+                <Label Content="Zarządzanie bazą gotowych zadań" 
+                   VerticalAlignment="Center"
+                   FontSize="25"
+                />
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="7" Margin="10,10,15,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>
@@ -406,7 +581,7 @@
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1.5*"/>
                     </Grid.RowDefinitions>
 
 
@@ -438,7 +613,7 @@
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1.5*"/>
                     </Grid.RowDefinitions>
 
 
@@ -461,7 +636,7 @@
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1.5*"/>
                     </Grid.RowDefinitions>
 
 
@@ -484,7 +659,7 @@
                 <Grid Grid.Column="3">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1.5*"/>
                     </Grid.RowDefinitions>
 
 
@@ -507,7 +682,7 @@
                 <Grid Grid.Column="4">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1.5*"/>
                     </Grid.RowDefinitions>
 
 
@@ -533,7 +708,7 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="3"/>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
 
 

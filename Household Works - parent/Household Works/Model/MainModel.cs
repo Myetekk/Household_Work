@@ -29,6 +29,29 @@ namespace Household_Works.Model
 
 
 
+        // delete kid from the database
+        private Edit_kids edit_kids = new Edit_kids();
+        public string kid_name_for_delete;
+        public void Delete_kid()
+        {
+            edit_kids.Delete_kid(kid_name_for_delete);
+        }
+
+
+
+
+
+        // adds kid to the database
+        public string kid_name_for_add;
+        public void Add_kid()
+        {
+            edit_kids.Add_kid(kid_name_for_add);
+        }
+
+
+
+
+
         // tasks for current kid
         private Combobox_Info.Read_kids reading_kid_tasks = new Combobox_Info.Read_kids();
         public string kid_task_name = "";
@@ -137,6 +160,7 @@ namespace Household_Works.Model
 
 
 
+        // saves tamplate of the task
         private Load_info.Templates_edit template_edit = new Load_info.Templates_edit();
         public void Save_template(string[] info)
         {
@@ -147,6 +171,7 @@ namespace Household_Works.Model
 
 
 
+        // deletes tamplate of the task
         public void Delete_template(string[] info)
         {
             template_edit.Delete_template(info);
@@ -183,7 +208,7 @@ namespace Household_Works.Model
 
 
         // check if text is not white space or null
-        public bool Field_contains_text(string[] text)
+        public bool Field_contains_text_table(string[] text)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -193,6 +218,19 @@ namespace Household_Works.Model
                 }
             }
             
+            return true;
+        }
+
+
+
+
+
+        // check if text is not white space or null
+        public bool Field_contains_text(string text)
+        {
+            if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
+                return false;
+
             return true;
         }
 
