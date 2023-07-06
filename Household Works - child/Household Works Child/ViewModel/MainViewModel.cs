@@ -63,6 +63,8 @@ namespace Household_Works_Child.ViewModel
                 }
             }
 
+            loaded_task_list = task_loader.load_tasks(kid_name);
+
             return loaded_task_list;
         }
 
@@ -113,7 +115,9 @@ namespace Household_Works_Child.ViewModel
             
             DateTime temp2 = new DateTime(2023, 7, 6, h, m, 0);
             //string temp = task_time.Substring(ind);
-            return date_checker.on_time(task_comm, temp2.ToString());
+            string temp3 = temp2.ToString();
+            temp3 = temp3.Remove(0, 12);
+            return date_checker.on_time(task_comm, temp3);
         }
 
 
