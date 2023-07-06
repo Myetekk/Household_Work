@@ -58,8 +58,17 @@ namespace Household_Works_Child.ViewModel
                 if (!On_Time(task.Task_Commision, task.Task_Time))
                 {
                     Delete_Task(task.Task_Name, Logging_Kid);
-                    task.Task_Points = "-" + task.Task_Points;
-                    Modify_Total_Points(Logging_Kid, task.Task_Points);
+                    //task.Task_Points = "-" + task.Task_Points;//ok
+
+                    //kid_name.Total_Po
+                    Total_Points = Load_Total_Points(kid_name);
+                    int tempA = Convert.ToInt32(Total_Points);
+                    int tempB = Convert.ToInt32(task.Task_Points);
+                    int result = tempA - tempB;
+
+                    string resultS = result.ToString();
+
+                    Modify_Total_Points(Logging_Kid, resultS);
                 }
             }
 
@@ -85,7 +94,7 @@ namespace Household_Works_Child.ViewModel
         }
 
         private bool On_Time(string task_comm, string task_time)
-        {//convert 5h into 05:00:00
+        {//convert 5h into 5:00:00
 
             int ind = 0;
             int h = 0, m = 0;
@@ -113,7 +122,7 @@ namespace Household_Works_Child.ViewModel
                 }
             }
             
-            DateTime temp2 = new DateTime(2023, 7, 6, h, m, 0);
+            DateTime temp2 = new DateTime(2023, 7, 7, h, m, 0);
             //string temp = task_time.Substring(ind);
             string temp3 = temp2.ToString();
             temp3 = temp3.Remove(0, 12);
