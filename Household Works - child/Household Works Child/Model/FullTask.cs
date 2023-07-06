@@ -53,31 +53,17 @@ namespace Household_Works_Child.Model
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(task_points)));
             }
         }
-        //private string name;
-        //public string Name
-        //{
-        //    get => name;
-        //    set => name = value;
-        //}
 
-        //private string description;
-        //public string Description
-        //{
-        //    get => description;
-        //    set => description = value;
-        //}
-        //private string time;
-        //public string Time
-        //{
-        //    get => time; 
-        //    set => time = value;
-        //}
-        //private string points;
-        //public string Points
-        //{
-        //    get => points; 
-        //    set => points = value;
-        //}
+        private string task_commision;
+        public string Task_Commision
+        {
+            get => task_commision;
+            set
+            {
+                task_commision = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(task_commision)));
+            }
+        }
 
         public virtual event PropertyChangedEventHandler PropertyChanged;
         public virtual void NotifyPropertyChanged(params string[] propertyNames)
