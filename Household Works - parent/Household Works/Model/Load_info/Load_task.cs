@@ -16,7 +16,7 @@ namespace Household_Works.Model.Load_info
 
         public string[] task_current_info(string kid_number)
         {
-            string[] task_current = new string[6];
+            string[] task_current = new string[7];
 
             conn.Open();
             command = conn.CreateCommand();
@@ -24,7 +24,7 @@ namespace Household_Works.Model.Load_info
             reader = command.ExecuteReader();
 
             task_current[0] = kid_number;
-            task_current[5] = "Zadania dla: " + kid_number;
+            task_current[6] = "Zadania dla: " + kid_number;
 
             int i = 0;
             while (reader.Read())
@@ -33,6 +33,7 @@ namespace Household_Works.Model.Load_info
                 task_current[2] += (string)reader["discription"] + "\n";
                 task_current[3] += (string)reader["time"] + "\n";
                 task_current[4] += (string)reader["points"] + "\n";
+                task_current[5] += (string)reader["time_of_commision"] + "\n";
                 i++;
             }
 

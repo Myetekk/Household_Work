@@ -16,7 +16,7 @@ namespace Household_Works.Model
         {
             conn.Open();
             command = conn.CreateCommand();
-            command.CommandText = $" CREATE TABLE '{kid_name}' ('id'    INTEGER NOT NULL, 'name'  TEXT, 'discription'   TEXT, 'time'  TEXT, 'points'    TEXT, PRIMARY KEY('id') ); ";
+            command.CommandText = $" CREATE TABLE '{kid_name}' ('id' INTEGER NOT NULL, 'name'  TEXT, 'discription'   TEXT, 'time'  TEXT, 'points' TEXT, 'time_of_commision' TEXT, PRIMARY KEY('id') ); ";
             command.ExecuteNonQuery();
 
             conn.Close();

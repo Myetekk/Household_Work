@@ -129,7 +129,7 @@ namespace Household_Works.Model.Combobox_Info
         {
             conn.Open();
             command = conn.CreateCommand();
-            command.CommandText = $" INSERT INTO {kid_name} (name, discription, time, points) VALUES ('{task_info[0]}', '{task_info[1]}', '{task_info[2]}', '{task_info[3]}'); ";
+            command.CommandText = $" INSERT INTO {kid_name} (name, discription, time, points, time_of_commision) VALUES ('{task_info[0]}', '{task_info[1]}', '{task_info[2]}', '{task_info[3]}', '{DateTime.Now.ToString()}'); ";
             command.ExecuteNonQuery();
 
             conn.Close();
