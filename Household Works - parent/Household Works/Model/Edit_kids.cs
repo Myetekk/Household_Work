@@ -11,11 +11,20 @@ namespace Household_Works.Model
     {
         SQLiteConnection conn = new SQLiteConnection(@"Data Source= .\..\..\..\..\database.db; Version=3");
         SQLiteCommand command;
-        public void Delete_kid(string kid_name)
+
+        public void Add_kid(string kid_name)
         {
             conn.Open();
             command = conn.CreateCommand();
-            command.CommandText = $"DROP TABLE '{kid_name}' ";
+            command.CommandText = $" CREATE TABLE '{kid_name}' ('id'    INTEGER NOT NULL, 'name'  TEXT, 'discription'   TEXT, 'time'  TEXT, 'points'    TEXT, PRIMARY KEY('id') ); ";
+            command.ExecuteNonQuery();
+
+            conn.Close();
+
+
+            conn.Open();
+            command = conn.CreateCommand();
+            command.CommandText = $" INSERT INTO KIDS (name, points) VALUES ('{kid_name}', '0'); ";
             command.ExecuteNonQuery();
 
             conn.Close();
@@ -24,11 +33,20 @@ namespace Household_Works.Model
 
 
 
-        public void Add_kid(string kid_name)
+
+        public void Delete_kid(string kid_name)
         {
             conn.Open();
             command = conn.CreateCommand();
-            command.CommandText = $" CREATE TABLE '{kid_name}' ('id'    INTEGER NOT NULL, 'name'  TEXT, 'discription'   TEXT, 'time'  TEXT, 'points'    TEXT, PRIMARY KEY('id') ); ";
+            command.CommandText = $"DROP TABLE '{kid_name}' ";
+            command.ExecuteNonQuery();
+
+            conn.Close();
+
+
+            conn.Open();
+            command = conn.CreateCommand();
+            command.CommandText = $"DELETE FROM KIDS WHERE name is '{kid_name}' ";
             command.ExecuteNonQuery();
 
             conn.Close();
