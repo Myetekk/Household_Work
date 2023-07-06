@@ -40,3 +40,28 @@ C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Househo
 C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\Household Works Child.csproj.CopyComplete
 C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\Household Works Child.exe
 C:\Users\Szymon\Desktop\Household_Work — kopia\Household Works - child\Household Works Child\obj\Debug\Household Works Child.pdb
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\Household Works Child.exe.config
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\Household Works Child.exe
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\Household Works Child.pdb
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\EntityFramework.dll
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\System.Data.SQLite.dll
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\EntityFramework.xml
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\Household_Work\Household Works - child\Household Works Child\bin\Debug\System.Data.SQLite.xml
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.csproj.AssemblyReference.cache
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\View\MainWindow.g.cs
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\App.g.cs
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child_MarkupCompile.cache
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child_MarkupCompile.lref
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\View\MainWindow.baml
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.g.resources
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household_Works_Child.Properties.Resources.resources
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.csproj.GenerateResource.cache
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.csproj.CoreCompileInputs.cache
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.csproj.CopyComplete
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.exe
+D:\Github\Household_Work\Household Works - child\Household Works Child\obj\Debug\Household Works Child.pdb
