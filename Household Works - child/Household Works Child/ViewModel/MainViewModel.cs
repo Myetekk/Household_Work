@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,17 +59,14 @@ namespace Household_Works_Child.ViewModel
                 if (!On_Time(task.Task_Commision, task.Task_Time))
                 {
                     Delete_Task(task.Task_Name, Logging_Kid);
-                    //task.Task_Points = "-" + task.Task_Points;//ok
 
-                    //kid_name.Total_Po
+
                     Total_Points = Load_Total_Points(kid_name);
                     int tempA = Convert.ToInt32(Total_Points);
                     int tempB = Convert.ToInt32(task.Task_Points);
-                    int result = tempA - tempB;
+                    string result = Convert.ToString(tempA - tempB);
 
-                    string resultS = result.ToString();
-
-                    Modify_Total_Points(Logging_Kid, resultS);
+                    Modify_Total_Points(Logging_Kid, result);
                 }
             }
 
@@ -93,40 +91,45 @@ namespace Household_Works_Child.ViewModel
             total_points_modifier.modify_total_points(kid_name, points);
         }
 
-        private bool On_Time(string task_comm, string task_time)
-        {//convert 5h into 5:00:00
+        private bool On_Time(string Task_Comm, string Task_Time)
+        {//convert 5h into 05:00:00
 
             int ind = 0;
-            int h = 0, m = 0;
+            int d = 0, h = 0, m = 0;
             string temp;
 
-            for (int i = 0; i < task_time.Length; i++)
+            for (int i = 0; i < Task_Time.Length; i++)
             {
-                if (task_time[i] == 'm')
+                if (Task_Time[i] == 'd')
                 {
                     ind = i;
-                    temp = task_time.Remove(ind);
-                    //task_time = task_time.Substring(ind);
+                    temp = Task_Time.Remove(ind);
+                    d = Int32.Parse(temp);
+
+                    break;
+                }
+                if (Task_Time[i] == 'm')
+                {
+                    ind = i;
+                    temp = Task_Time.Remove(ind);
                     m = Int32.Parse(temp);
 
                     break;
                 }
-                else if (task_time[i] == 'h')
+                else if (Task_Time[i] == 'h')
                 {
                     ind = i;
-                    temp = task_time.Remove(ind);
-                    //task_time = task_time.Substring(ind);
+                    temp = Task_Time.Remove(ind);
                     h = Int32.Parse(temp);
 
                     break;
                 }
             }
-            
-            DateTime temp2 = new DateTime(2023, 7, 7, h, m, 0);
-            //string temp = task_time.Substring(ind);
-            string temp3 = temp2.ToString();
-            temp3 = temp3.Remove(0, 12);
-            return date_checker.on_time(task_comm, temp3);
+
+            TimeSpan temp_span = new TimeSpan(d,h,m,0);
+            string task_time_str = temp_span.ToString(@"dd\.hh\:mm\:ss");
+
+            return date_checker.on_time(Task_Comm, task_time_str);
         }
 
 
@@ -190,8 +193,16 @@ namespace Household_Works_Child.ViewModel
                         if (!On_Time(Selected_Task_Commision, Selected_Task_Time))
                         {
                             Delete_Task(Selected_Task_Name, Logging_Kid);
-                            Selected_Task_Points = "-" + Selected_Task_Points;
-                            Modify_Total_Points(Logging_Kid, Selected_Task_Points);
+
+                            int tempA = Convert.ToInt32(Total_Points);
+                            int tempB = Convert.ToInt32(Selected_Task_Points);
+                            string result = Convert.ToString(tempA - tempB);
+
+                            Modify_Total_Points(Logging_Kid, result);
+
+                            //refresh screen
+                            Task_List = Load_Tasks(Logging_Kid);
+                            Total_Points = Load_Total_Points(Logging_Kid);
                         }
                     }
                 }
